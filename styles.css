@@ -1,0 +1,382 @@
+/* Base styles */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #4ecdc4, #ff6b6b);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.text-display {
+    font-size: 28px;
+    margin: 20px 0;
+    color: #555;
+    min-height: 40px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Animated Character Styles */
+.animated-man {
+    width: 120px;
+    height: 150px;
+    margin: 30px auto;
+    position: relative;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+}
+
+.head {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #8b4513;
+    border-radius: 50%;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #fdbcb4, #ffdbac);
+    position: relative;
+    animation: headBob 2s ease-in-out infinite;
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+.eyes {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
+
+.eye {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 4px;
+    animation: blink 4s infinite;
+}
+
+.left-eye {
+    background: radial-gradient(circle, #4ecdc4, #2980b9);
+    animation-delay: 0.1s;
+}
+
+.right-eye {
+    background: radial-gradient(circle, #ff6b6b, #e74c3c);
+    animation-delay: 0.2s;
+}
+
+.mouth {
+    position: absolute;
+    top: 24px;
+    left: 16px;
+    width: 8px;
+    height: 4px;
+    border: 2px solid #e74c3c;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    background: #ff6b6b;
+    animation: smile 3s ease-in-out infinite;
+}
+
+.cheeks {
+    position: absolute;
+    top: 18px;
+    width: 100%;
+}
+
+.cheek {
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 182, 193, 0.8);
+    border-radius: 50%;
+    position: absolute;
+    animation: blush 2s ease-in-out infinite;
+}
+
+.left-cheek {
+    left: 6px;
+}
+
+.right-cheek {
+    right: 6px;
+}
+
+.body {
+    width: 8px;
+    height: 60px;
+    background: linear-gradient(180deg, #3498db, #2980b9);
+    margin: 5px auto 0;
+    position: relative;
+    border-radius: 4px;
+}
+
+.shirt {
+    position: absolute;
+    top: 0;
+    left: -6px;
+    width: 20px;
+    height: 40px;
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    border-radius: 10px 10px 0 0;
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.2);
+}
+
+.arms {
+    position: absolute;
+    top: 15px;
+    left: -15px;
+    width: 38px;
+    height: 100%;
+}
+
+.arm {
+    width: 25px;
+    height: 6px;
+    background: linear-gradient(90deg, #fdbcb4, #ffdbac);
+    border-radius: 3px;
+    position: absolute;
+    transform-origin: left center;
+    border: 1px solid #d4a574;
+}
+
+.left-arm {
+    top: 0;
+    animation: leftArmWave 2s ease-in-out infinite;
+}
+
+.right-arm {
+    top: 0;
+    right: 0;
+    transform-origin: right center;
+    animation: rightArmWave 2s ease-in-out infinite;
+}
+
+.legs {
+    position: absolute;
+    top: 55px;
+    left: -10px;
+    width: 28px;
+}
+
+.leg {
+    width: 25px;
+    height: 6px;
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    border-radius: 3px;
+    margin: 3px 0;
+    transform-origin: left center;
+    border: 1px solid #2471a3;
+}
+
+.left-leg {
+    animation: leftLegWalk 1.5s ease-in-out infinite;
+}
+
+.right-leg {
+    animation: rightLegWalk 1.5s ease-in-out infinite;
+}
+
+.feet {
+    position: absolute;
+    top: 70px;
+    left: -5px;
+}
+
+.foot {
+    width: 12px;
+    height: 8px;
+    background: linear-gradient(45deg, #8b4513, #654321);
+    border-radius: 6px 6px 0 0;
+    margin: 2px 8px;
+    animation: footTap 1.5s ease-in-out infinite;
+}
+
+.left-foot {
+    animation-delay: 0s;
+}
+
+.right-foot {
+    animation-delay: 0.75s;
+}
+
+/* Particle Effects */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, #ff6b6b, #4ecdc4);
+    border-radius: 50%;
+    animation: particleFloat 1s ease-out forwards;
+}
+
+/* Animations */
+@keyframes headBob {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-3px) rotate(-1deg); }
+    50% { transform: translateY(-5px) rotate(0deg); }
+    75% { transform: translateY(-3px) rotate(1deg); }
+}
+
+@keyframes blink {
+    0%, 85%, 100% { transform: scaleY(1); }
+    90%, 95% { transform: scaleY(0.1); }
+}
+
+@keyframes smile {
+    0%, 100% { transform: scaleX(1); }
+    50% { transform: scaleX(1.2); }
+}
+
+@keyframes blush {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes leftArmWave {
+    0%, 100% { transform: rotate(-10deg); }
+    25% { transform: rotate(-30deg); }
+    50% { transform: rotate(10deg); }
+    75% { transform: rotate(-20deg); }
+}
+
+@keyframes rightArmWave {
+    0%, 100% { transform: rotate(10deg); }
+    25% { transform: rotate(30deg); }
+    50% { transform: rotate(-10deg); }
+    75% { transform: rotate(20deg); }
+}
+
+@keyframes leftLegWalk {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(20deg); }
+    50% { transform: rotate(-10deg); }
+    75% { transform: rotate(15deg); }
+}
+
+@keyframes rightLegWalk {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-15deg); }
+    50% { transform: rotate(10deg); }
+    75% { transform: rotate(-20deg); }
+}
+
+@keyframes footTap {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-2px); }
+}
+
+/* Special Effects */
+.jump {
+    animation: jump 0.8s ease-in-out !important;
+}
+
+@keyframes jump {
+    0% { transform: translateY(0) scale(1) rotate(0deg); }
+    25% { transform: translateY(-15px) scale(1.1) rotate(-5deg); }
+    50% { transform: translateY(-30px) scale(1.2) rotate(0deg); }
+    75% { transform: translateY(-15px) scale(1.1) rotate(5deg); }
+    100% { transform: translateY(0) scale(1) rotate(0deg); }
+}
+
+.excited {
+    animation: excited 1s ease-in-out !important;
+}
+
+@keyframes excited {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.1) rotate(-2deg); }
+    50% { transform: scale(1.2) rotate(2deg); }
+    75% { transform: scale(1.1) rotate(-1deg); }
+}
+
+@keyframes particleFloat {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px) scale(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .animated-man {
+        width: 100px;
+        height: 120px;
+    }
+    
+    .text-display {
+        font-size: 24px;
+    }
+    
+    button {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+}
